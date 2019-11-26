@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { connect } from "react-redux";
 import * as actionCreators from "../state/actionCreators";
+import { StyledContainer, StyledForm } from '../styles';
 
 function Login({ login }) {
   const username = useRef("");
@@ -15,13 +16,14 @@ function Login({ login }) {
   };
 
   return (
-    <div>
-      <form>
+    <StyledContainer>
+      <StyledForm>
+          <h1>Login</h1>
         <input placeholder="Username" ref={username} type="text" />
-        <input placeholder="Password" ref={password} type="text" />
+        <input placeholder="Password" ref={password} type="password" />
         <button onClick={loginUser}>Go</button>
-      </form>
-    </div>
+      </StyledForm>
+    </StyledContainer>
   );
 }
 

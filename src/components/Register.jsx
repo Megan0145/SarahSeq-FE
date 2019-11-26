@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { connect } from "react-redux";
 import * as actionCreators from "../state/actionCreators";
 import axios from "axios";
+import { StyledContainer, StyledForm } from '../styles';
 
 function Register(props) {
   const username = useRef("");
@@ -23,13 +24,14 @@ function Register(props) {
   };
 
   return (
-    <div>
-      <form>
+    <StyledContainer>
+      <StyledForm>
+          <h1>Register for SarahSeq</h1>
         <input placeholder="Username" ref={username} type="text" />
-        <input placeholder="Password" ref={password} type="text" />
+        <input placeholder="Password" ref={password} type="password" />
         <button onClick={registerUser}>Go</button>
-      </form>
-    </div>
+      </StyledForm>
+    </StyledContainer>
   );
 }
 
