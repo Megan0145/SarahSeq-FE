@@ -5,9 +5,10 @@ import * as actionCreators from "../state/actionCreators";
 function Dashboard(props) {
   const { getUserTests } = props;
   const tests = props.userTests.userTests;
+  const token = localStorage.getItem("token");
   useEffect(() => {
     getUserTests();
-  }, [getUserTests]);
+  }, [getUserTests, token]);
   if (!tests) {
     return <p>Loading...</p>;
   }

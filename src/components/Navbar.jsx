@@ -1,25 +1,41 @@
 import React from "react";
-import { NavLink, Route } from "react-router-dom";
+import { NavLink, Route, useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actionCreators from "../state/actionCreators";
 import Login from "./Login";
 import Register from "./Register";
 import Home from "./Home";
-import Dashboard from './Dashboard';
+import Dashboard from "./Dashboard";
 import { StyledNav, StyledMain } from "../styles";
 
-function NavBar(props) {
+function NavBar() {
+  let history = useHistory();
+  const logout = e => {
+    e.preventDefault();
+    localStorage.removeItem("token");
+    history.push("/");
+  };
+
   return (
     <div>
       <StyledNav>
         <div className="nav-left">
           <img src="icons8-dna-helix-64.png" alt="Dna double helix" />
-          <NavLink exact to="/">Home</NavLink>
+          <NavLink exact to="/">
+            Home
+          </NavLink>
         </div>
         <div className="nav-right">
-          <NavLink exact to="/dashboard">Dashboard</NavLink>
-          <NavLink exact to="/register">Register</NavLink>
-          <NavLink exact to="/login">Login</NavLink>
+          <NavLink exact to="/dashboard">
+            Dashboard
+          </NavLink>
+          <NavLink exact to="/register">
+            Register
+          </NavLink>
+          <NavLink exact to="/login">
+            Login
+          </NavLink>
+          <button onClick={logout}>Logout</button>
         </div>
       </StyledNav>
       <StyledMain>
