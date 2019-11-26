@@ -5,6 +5,7 @@ import * as actionCreators from "../state/actionCreators";
 import Login from "./Login";
 import Register from "./Register";
 import Home from "./Home";
+import Dashboard from './Dashboard';
 import { StyledNav, StyledMain } from "../styles";
 
 function NavBar(props) {
@@ -16,12 +17,14 @@ function NavBar(props) {
           <NavLink exact to="/">Home</NavLink>
         </div>
         <div className="nav-right">
+          <NavLink exact to="/dashboard">Dashboard</NavLink>
           <NavLink exact to="/register">Register</NavLink>
           <NavLink exact to="/login">Login</NavLink>
         </div>
       </StyledNav>
       <StyledMain>
         <Route exact path="/" component={Home} />
+        <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
       </StyledMain>
