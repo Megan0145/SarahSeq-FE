@@ -6,6 +6,7 @@ export const login = (userData) => dispatch => {
     .then(res => {
         console.log(res);
         dispatch({ type: types.SET_LOGGED_IN_USER, payload: res.data.user })
+        localStorage.setItem('token', res.data.token)
     })
     .catch(err => {
         console.log(err)
