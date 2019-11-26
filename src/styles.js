@@ -54,5 +54,30 @@ export const StyledMain = styled.main`
 
 export const StyledNav = styled.nav`
   width: 100%;
-  background-color: pink;
+  background-color: #ece8e9;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  a {
+    text-decoration: none;
+    margin: 0 2rem;
+  }
+  img {
+    height: 30px;
+  }
+  div {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    &.nav-left {
+      justify-content: flex-start;
+      padding-left: 2rem;
+    }
+    &.nav-right {
+      justify-content: flex-end;
+    }
+  }
 `;
