@@ -4,21 +4,22 @@ import { connect } from "react-redux";
 import * as actionCreators from "../state/actionCreators";
 import Login from "./Login";
 import Register from "./Register";
+import { StyledNav, StyledMain } from '../styles';
 
 function NavBar(props) {
   return (
     <div>
-      <nav>
+      <StyledNav>
         <NavLink exact to="/">
           Home
         </NavLink>
         <NavLink to="/register">Register</NavLink>
         <NavLink to="/login">Login</NavLink>
-      </nav>
-      <main>
+      </StyledNav>
+      <StyledMain>
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
-      </main>
+      </StyledMain>
     </div>
   );
 }
