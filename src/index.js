@@ -8,7 +8,8 @@ import { Provider } from "react-redux";
 import * as reducers from "./state/reducers";
 
 const monsterReducer = combineReducers({
-  tests: reducers.testReducer
+  tests: reducers.testReducer,
+  userTests: reducers.userTestsReducer
 });
 
 const store = createStore(

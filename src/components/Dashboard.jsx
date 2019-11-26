@@ -1,21 +1,23 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import * as actionCreators from "../state/actionCreators";
-import axiosWithAuth from '../axiosWithAuth';
 
 function Dashboard(props) {
-    useEffect(() => {
-        axiosWithAuth().get("http://localhost:4000/api/users/tests")
-        .then(res => {
-            console.log(res)
-        })
-        .catch(err => {
-            console.log(err)
-        })
-    });
+  const { getUserTests } = props;
+  const tests = props.userTests.userTests;
+  useEffect(() => {
+    getUserTests();
+  }, [getUserTests]);
+  if (!tests) {
+    return <p>Loading...</p>;
+  }
   return (
     <div>
       <h1>Dashboard</h1>
+      <h3>My tests: </h3>
+      {tests.map(test => {
+        return <p key={test.test_name}>{test.test_name}</p>;
+      })}
     </div>
   );
 }
