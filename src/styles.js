@@ -11,6 +11,7 @@ export const StyledForm = styled.form`
   align-items: center;
   border: none;
   border-radius: 5px;
+  margin-top: 12vh;
   h1 {
     color: grey;
     margin-bottom: 2rem;
@@ -64,6 +65,10 @@ export const StyledNav = styled.nav`
   a {
     text-decoration: none;
     margin: 0 2rem;
+    color: grey;
+    &.active {
+        color: #98698d;
+    }
   }
   img {
     height: 30px;

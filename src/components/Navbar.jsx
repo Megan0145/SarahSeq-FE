@@ -13,17 +13,17 @@ function NavBar(props) {
       <StyledNav>
         <div className="nav-left">
           <img src="icons8-dna-helix-64.png" alt="Dna double helix" />
-          <NavLink to="/">Home</NavLink>
+          <NavLink exact to="/">Home</NavLink>
         </div>
         <div className="nav-right">
-          <NavLink to="/register">Register</NavLink>
-          <NavLink to="/login">Login</NavLink>
+          <NavLink exact to="/register">Register</NavLink>
+          <NavLink exact to="/login">Login</NavLink>
         </div>
       </StyledNav>
       <StyledMain>
         <Route exact path="/" component={Home} />
-        <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
       </StyledMain>
     </div>
   );
